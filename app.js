@@ -36,14 +36,14 @@ function cargarCiudades(departamentoId) {
 }
 
 //Función crear mensaje de whatsapp
-function crearMensajeWhatsApp(nombre, tramite, nombreDepartamento, nombreCiudad, tipoVehiculo) {
+function crearMensajeWhatsApp(nombre, nombreTramite, nombreDepartamento, nombreCiudad, tipoVehiculo) {
     // Aquí, los emojis están directamente en el string
     let mensaje = `🌟 Solicitud de Trámite de Tránsito 🌟
     
 ¡Hola! me encuentro realizando una solicitud de trámite y me gustaría enviarte los detalles:
 
 👤 Nombre del Solicitante: ${nombre}
-🚗 Trámite Solicitado: ${tramite}
+🚗 Trámite Solicitado: ${nombreTramite}
 📍 Departamento: ${nombreDepartamento}
 🏙️ Ciudad de Circulación: ${nombreCiudad}
 🚘 Tipo de Vehículo: ${tipoVehiculo}
@@ -60,7 +60,8 @@ document.getElementById('formulario-cita').addEventListener('submit', function(e
 
     // Obtener los valores del formulario
     let nombre = document.getElementById('nombre').value;
-    let tramite = document.getElementById('tramite').value;
+    let tramite = document.getElementById('tramite');
+    let nombreTramite = tramite.options[tramite.selectedIndex].text;
     let departamento = document.getElementById('departamento');
     let nombreDepartamento = departamento.options[departamento.selectedIndex].text;
     let ciudad = document.getElementById('ciudad');
@@ -68,7 +69,7 @@ document.getElementById('formulario-cita').addEventListener('submit', function(e
     let tipoVehiculo = document.getElementById('vehiculo').value;
 
     // Crear el mensaje para el modal y WhatsApp
-    let mensaje = crearMensajeWhatsApp(nombre, tramite, nombreDepartamento, nombreCiudad, tipoVehiculo)
+    let mensaje = crearMensajeWhatsApp(nombre, nombreTramite, nombreDepartamento, nombreCiudad, tipoVehiculo)
 
     // Guardar el mensaje para usarlo luego en WhatsApp
     window.crearMensajeWhatsApp = mensaje;
