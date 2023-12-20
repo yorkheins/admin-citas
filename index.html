@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solicitud para Tramites de Tránsito</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-4">
+        <h1>Solicita aquí tu Tramite</h1>
+    </header>
+
+    <main class="container my-5">
+        <section>
+            <h2 class="text-center mb-4">Solicita el Tramite a Realizar</h2>
+            <form id="formulario-cita">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" class="form-control" id="nombre" name="nombre" required>
+                </div>
+                <div class="form-group">
+                    <label for="tramite">Trámite:</label>
+                    <select class="form-control" id="tramite" name="tramite" required>
+                        <option value="">--Selecciona un trámite--</option>
+                        <option value="traspaso">Historial Legal Vehiculo</option>
+                        <option value="traspaso">Traspaso de Propiedad</option>
+                        <option value="bajar-runt">Traspaso a persona Indeterminada</option>
+                        <option value="levantamiento">Levantamiento de Prenda</option>
+                        <option value="traslado">Traslado de Cuenta</option>
+                        <option value="inscripcion">Inscripción de Cuenta</option>
+                        <option value="placas">Duplicado de Placa</option>
+                        <option value="impuestos">Pago de Impuestos</option>
+                        <option value="soat">Asesoria SOAT</option>
+                        <option value="other">Otros</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="departamento">Departamento:</label>
+                    <select class="form-control" id="departamento" name="departamento" required>
+                        <option value="">--Selecciona un departamento--</option>
+                        <!-- Las opciones se cargarán dinámicamente -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="ciudad">Ciudad de Circulación:</label>
+                    <select class="form-control" id="ciudad" name="ciudad" required>
+                        <option value="">--Primero selecciona un departamento--</option>
+                        <!-- Las opciones se cargarán dinámicamente -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="tramite">Tipo de Vehiculo</label>
+                    <select class="form-control" id="vehiculo" name="vehiculo" required>
+                        <option value="">--Selecciona una opción--</option>
+                        <option value="carro">Carro</option>
+                        <option value="moto">Moto</option>
+                        <option value="camioneta">Camioneta</option>
+                    </select>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Reservar Cita</button>
+                    <div class="modal fade" id="confirmacionModal" tabindex="-1" role="dialog" aria-labelledby="confirmacionModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="confirmacionModalLabel">Cita Reservada</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    Tu cita ha sido creada exitosamente.
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                    <button type="button" class="btn btn-primary" onclick="enviarWhatsApp()">Enviar a WhatsApp</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </form>
+        </section>
+    </main>
+    <footer class="bg-light text-center text-lg-start">
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            &copy; 2023 M&J Tramites
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
