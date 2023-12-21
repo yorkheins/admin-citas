@@ -1,0 +1,39 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Estilizar el Formulario */
+#formulario-cita {
+    background-color: #ffffff; /* Fondo del formulario */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.form-control {
+    border: 1px solid #ced4da;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: border-color 0.3s;
+}
+
+.form-control:focus {
+    border-color: #007bff; /* Color al enfocar */
+    box-shadow: none;
+}
+
+/* Estilos para el botón */
+.btn-primary {
+    background-color: #007bff; /* Color principal */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Color al pasar el mouse */
+}
+
+.btn-primary:active {
+    background-color: #0056b3; /* Color cuando el botón es presionado */
+}
