@@ -60,11 +60,8 @@ document.getElementById('formulario-cita').addEventListener('submit', function(e
 
     // Obtener los valores del formulario
     let nombre = document.getElementById('nombre').value;
-    let tramite = document.getElementById('tramite');
     let nombreTramite = tramite.options[tramite.selectedIndex].text;
-    let departamento = document.getElementById('departamento');
     let nombreDepartamento = departamento.options[departamento.selectedIndex].text;
-    let ciudad = document.getElementById('ciudad');
     let nombreCiudad = ciudad.options[ciudad.selectedIndex].text
     let tipoVehiculo = document.getElementById('vehiculo').value;
 
